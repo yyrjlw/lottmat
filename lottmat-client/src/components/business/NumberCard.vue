@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-xl bg-white px-1 py-2 flex justify-around">
+    <div class="rounded-xl bg-white py-1 flex justify-around flex-wrap-reverse">
         <slot></slot>
     </div>
 </template>

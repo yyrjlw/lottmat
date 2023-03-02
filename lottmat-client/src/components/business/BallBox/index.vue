@@ -1,6 +1,6 @@
 <template>
     <div
-        class="px-2 pt-5 grid grid-flow-row place-items-center gap-2 grid-autocol"
+        class="px-2 pt-5 grid grid-flow-row place-items-center gap-2 justify-center grid-autocol"
     >
         <Ball
             v-for="{ num, selected } in combineListOfRepeat"
@@ -83,8 +83,8 @@ const startRandomSelection = async () => {
         setTimeout(async () => {
             clearInterval(startRandomSelectionInterval)
             result = await randomSelection()
-            setTimeout(() => res(null), 500)
-        }, 1500)
+            setTimeout(() => res(null), 0)
+        }, 500)
     })
     return result
 }

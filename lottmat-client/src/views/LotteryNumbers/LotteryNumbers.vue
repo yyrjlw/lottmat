@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from "@/components/NavBar.vue"
+import NavBar from "@/components/custom/NavBar.vue"
 import { loadIcon } from "@/utils/img.util"
 const cellList = [
     {
@@ -30,17 +30,17 @@ const cellList = [
     {
         icon: "qilecai.png",
         title: "七乐彩",
-        url: ""
+        url: "/QiLeCai"
     },
     {
         icon: "3D.png",
         title: "福彩3D",
-        url: ""
+        url: "/no"
     },
     {
         icon: "kuaile8.png",
         title: "快乐8",
-        url: ""
+        url: "/no"
     }
 ]
 </script>

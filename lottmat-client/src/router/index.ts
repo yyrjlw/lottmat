@@ -24,9 +24,24 @@ const router = createRouter({
         {
             path: "/UnionLotto",
             name: "UnionLotto",
-            component: () => import("../views/UnionLotto.vue"),
+            component: () => import("../views/LotteryNumbers/UnionLotto.vue"),
             meta: {
                 title: "双色球"
+            }
+        },
+        {
+            path: "/QiLeCai",
+            name: "QiLeCai",
+            component: () => import("../views/LotteryNumbers/QiLeCai.vue"),
+            meta: {
+                title: "七乐彩"
+            }
+        },
+        {
+            path: "/:pathMatch(.*)*",
+            component: () => import("../views/LookForword.vue"),
+            meta: {
+                title: "敬请期待"
             }
         }
     ]

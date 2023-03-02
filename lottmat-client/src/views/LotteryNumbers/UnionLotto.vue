@@ -21,19 +21,36 @@
         </div>
     </div>
     <div class="selected-area px-3 pt-3">
-        <div class="text-sm py-3">号码区</div>
+        <div class="text-sm py-3 flex justify-between">
+            <div>号码区</div>
+            <div>
+                每注
+                <span class="text-red-500">2</span>
+                元，共计
+                <span class="text-red-500">
+                    {{ generatedNumbers.length * 2 }}
+                </span>
+                元
+            </div>
+        </div>
         <div class="overflow-y-auto h-80">
             <number-card
                 v-for="({ red, blue }, index) of generatedNumbers"
                 :key="index"
                 class="w-full my-2"
             >
-                <div v-for="item of red" :key="item" class="selectedBall red">
-                    {{ item }}
-                </div>
-                <div v-for="item of blue" :key="item" class="selectedBall blue">
-                    {{ item }}
-                </div>
+                <SelectedBall
+                    v-for="item of red"
+                    :key="item"
+                    :number="item"
+                    type="red"
+                />
+                <SelectedBall
+                    v-for="item of blue"
+                    :key="item"
+                    :number="item"
+                    type="blue"
+                />
             </number-card>
         </div>
     </div>
@@ -66,11 +83,11 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from "@/components/NavBar.vue"
-import BallBox from "@/components/BallBox/index.vue"
-import BottomBar from "@/components/BottomBar.vue"
+import type BallBox from "@/components/business/BallBox/index.vue"
+import BottomBar from "@/components/custom/BottomBar.vue"
 import { ref } from "vue"
-import NumberCard from "@/components/NumberCard.vue"
+import NumberCard from "@/components/business/NumberCard.vue"
+import SelectedBall from "@/components/business/SelectedBall.vue"
 
 const reset = () => {
     generatedNumbers.value = []
@@ -88,7 +105,6 @@ const redBollBox = ref<InstanceType<typeof BallBox> | null>(null)
 const blueBollBox = ref<InstanceType<typeof BallBox> | null>(null)
 
 const startRandomSelection = async () => {
-    reset()
     for (let index = 0; index < numberOfgenerate.value; index++) {
         const resultForRedTask = redBollBox.value!.startRandomSelection()
         const resultForBlueTask = blueBollBox.value!.startRandomSelection()
@@ -105,16 +121,4 @@ const startRandomSelection = async () => {
 }
 </script>
 
-<style scoped lang="scss">
-.selectedBall {
-    @apply w-9 h-9 rounded-full bg-no-repeat bg-cover text-white flex justify-center items-center text-xl;
-}
-.selectedBall {
-    &.red {
-        background-image: url("@/assets/icon/redBallKjgg.png");
-    }
-    &.blue {
-        background-image: url("@/assets/icon/blueBallKjgg.png");
-    }
-}
-</style>
+<style scoped lang="scss"></style>

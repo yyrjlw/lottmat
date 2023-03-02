@@ -7,20 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Ball: typeof import('./src/components/BallBox/Ball.vue')['default']
-    BallBox: typeof import('./src/components/BallBox/index.vue')['default']
-    BottomBar: typeof import('./src/components/BottomBar.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
-    IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
-    IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
-    IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
-    IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
-    NavBar: typeof import('./src/components/NavBar.vue')['default']
-    NumberCard: typeof import('./src/components/NumberCard.vue')['default']
+    Ball: typeof import('./src/components/business/BallBox/Ball.vue')['default']
+    BallBox: typeof import('./src/components/business/BallBox/index.vue')['default']
+    BottomBar: typeof import('./src/components/custom/BottomBar.vue')['default']
+    NavBar: typeof import('./src/components/custom/NavBar.vue')['default']
+    NumberCard: typeof import('./src/components/business/NumberCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
+    SelectedBall: typeof import('./src/components/business/SelectedBall.vue')['default']
     VanButton: typeof import('vant/es')['Button']
     VanIcon: typeof import('vant/es')['Icon']
     VanImage: typeof import('vant/es')['Image']
@@ -28,6 +22,6 @@ declare module '@vue/runtime-core' {
     VanStepper: typeof import('vant/es')['Stepper']
     VanSwipe: typeof import('vant/es')['Swipe']
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
+    VerticalAdaptiveBox: typeof import('./src/components/common/VerticalAdaptiveBox.vue')['default']
   }
 }

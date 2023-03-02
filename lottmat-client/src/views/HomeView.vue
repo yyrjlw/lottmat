@@ -48,7 +48,7 @@ const features = [
     {
         icon: "notice.svg",
         title: "福彩咨询",
-        url: ""
+        url: "/a"
     }
 ]
 </script>
