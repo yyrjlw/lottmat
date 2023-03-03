@@ -83,8 +83,8 @@ const startRandomSelection = async () => {
         setTimeout(async () => {
             clearInterval(startRandomSelectionInterval)
             result = await randomSelection()
-            setTimeout(() => res(null), 0)
-        }, 500)
+            setTimeout(() => res(null), 500)
+        }, 1000)
     })
     return result
 }
